@@ -1,0 +1,32 @@
+[package]
+name = "stm32f4-md407"
+version = "0.1.0"
+edition = "2018"
+authors = ["Carl Malmgren"]
+description = "Board support crate for md407 board"
+readme = "README.md"
+exclude = [".vscode/*"]
+repository = "https://github.com/Malmz/stm32f4-md407"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["md407", "stm32f4", "arm"]
+license = "MIT"
+
+[package.metadata.docs.rs]
+default-target = "thumbv7em-none-eabihf"
+targets = []                             # build only default target for docs
+
+[dependencies]
+bxcan = "0.5.0"
+cortex-m = "0.7"
+cortex-m-rt = "0.7.0"
+heapless = "0.7.7"
+nb = "1.0.0"
+
+[dependencies.stm32f4xx-hal]
+#version = "0.10.1"
+git = "https://github.com/stm32-rs/stm32f4xx-hal"
+features = ["rt", "stm32f407", "can"]
+
+[lib]
+test = false
+bench = false

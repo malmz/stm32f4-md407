@@ -1,0 +1,9 @@
+[target.thumbv7em-none-eabi]
+
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+rustflags = ["-C", "link-arg=--nmagic", "-C", "link-arg=-Tlink-override.x"]
+
+[build]
+
+target = "thumbv7em-none-eabi" # Cortex-M4 and Cortex-M7 (no FPU)
+# target = "thumbv7em-none-eabihf"     # Cortex-M4F and Cortex-M7F (with FPU)
